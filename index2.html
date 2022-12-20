@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .pushable {
+          position: relative;
+          border: none;
+          background: transparent;
+          padding: 0;
+          cursor: pointer;
+          outline-offset: 4px;
+          transition: filter 250ms;
+        }
+        .shadow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: hsl(0deg 0% 0% / 0.25);
+          will-change: transform;
+          transform: translateY(2px);
+          transition:
+            transform
+            600ms
+            cubic-bezier(.3, .4, .2, 1);
+        }
+        .edge {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 96%;
+          border-radius: 12px;
+          background: linear-gradient(
+            to left,
+            hsl(340deg 100% 16%) 0%,
+            hsl(340deg 100% 32%) 8%,
+            hsl(340deg 100% 32%) 92%,
+            hsl(340deg 100% 16%) 100%
+          );
+        }
+        .front {
+          display: block;
+          position: relative;
+          padding: 12px 48px;
+          border-radius: 12px;
+          font-size: 1.25rem;
+          color: white;
+          background-image: url('/test-btn.svg');
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+          will-change: transform;
+          transform: translateY(-4px);
+          transition:
+            transform
+            400ms
+            cubic-bezier(.3, .7, .4, 1);
+        }
+        
+        .pushable:hover .front {
+            transform: translateY(-2px);
+          transition: transform 10ms;
+        }
+        .pushable:active .front {
+          transform: translateY(-2px);
+          transition: transform 34ms;
+        }
+       
+        .pushable:focus:not(:focus-visible) {
+          outline: none;
+        }
+      </style>
+      
+      <button class="pushable">
+  
+        <span class="edge"></span>
+        <span class="front">
+          Play now
+        </span>
+      </button>
+</body>
+</html>
