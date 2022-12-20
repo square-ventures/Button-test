@@ -77,6 +77,52 @@
         .pushable:focus:not(:focus-visible) {
           outline: none;
         }
+        
+        
+        
+  
+.btn {
+  height: 56px;
+  border: none;
+  font-size: 13px;
+  line-height: 20px;
+  text-transform: uppercase;
+  z-index: 2;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: transparent;
+  padding: 0;
+  &:disabled {
+    opacity: 0.33 !important;
+  }
+
+  &--primary {
+    background-image: url('assets/primary-button.svg');
+
+    &:hover,
+    &:focus {
+      background-image: url('assets/primary-button_HOVER.svg');
+      transform: translateY(2px);
+
+    }
+  }
+    
+     &--primary-2 {
+    background-image: url('assets/primary-button.svg');
+
+    &:hover,
+    &:focus {
+      background-image: url('assets/primary-button_HOVER.svg');
+      padding-top:4.67px;
+
+    }
+  }
+    
+    .btn-lg
+    {
+        width:120px;
+    }
       </style>
       
       <button class="pushable">
@@ -86,5 +132,19 @@
           Play now
         </span>
       </button>
+    
+     <button
+            class="btn btn--primary btn-lg btn-block"
+            
+          >
+            Deposit
+          </button>  
+    
+     <button
+            class="btn btn--primary-2 btn-lg btn-block"
+            
+          >
+            Deposit 2
+          </button>   
 </body>
 </html>
